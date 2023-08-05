@@ -11,6 +11,8 @@ return require('packer').startup(function(use)
 	use { 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} }
 	use 'nvim-treesitter/playground'
 
+	use 'tpope/vim-fugitive'
+
 	use { "catppuccin/nvim", as = "catppuccin" }
 
 	use {
@@ -30,6 +32,8 @@ return require('packer').startup(function(use)
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
 	}
+
+	use 'terrortylor/nvim-comment'
 
 	use {
 		'nvim-lualine/lualine.nvim',
