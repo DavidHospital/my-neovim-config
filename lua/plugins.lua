@@ -22,7 +22,18 @@ return require('packer').startup(function(use)
 	use {
 		'hrsh7th/cmp-nvim-lsp',
 		'hrsh7th/nvim-cmp',
---		'windwp/nvim-autopairs',
+		'hrsh7th/cmp-nvim-lsp-signature-help',
+		'hrsh7th/vim-vsnip',
+		'hrsh7th/cmp-vsnip',
+	}
+	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	}
+
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
 end)
 
