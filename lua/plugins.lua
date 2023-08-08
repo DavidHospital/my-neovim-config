@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-fugitive'
 
 	use { "catppuccin/nvim", as = "catppuccin" }
+	use { "rebelot/kanagawa.nvim", as = "kanagawa" }
 
 	use {
 		"williamboman/mason.nvim",
