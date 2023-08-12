@@ -40,6 +40,10 @@ return require('packer').startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
+	use {
+		'akinsho/bufferline.nvim', tag = "*", 
+		requires = 'nvim-tree/nvim-web-devicons'
+	}
 
 	use({
 		"iamcco/markdown-preview.nvim",

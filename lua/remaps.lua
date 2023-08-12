@@ -10,6 +10,7 @@ vim.keymap.set("n", "<C-k>", "<Cmd>bprev<CR>")
 -- center screen after some motions
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "gd", "gdzz")
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
