@@ -43,6 +43,28 @@ require('mason-lspconfig').setup_handlers({
 	end,
 })
 
+-- yaml-language-server settings
+lspconfig.yamlls.setup {
+	on_attach = on_attach,
+	capabilities = lsp_capabilities,
+	settings = {
+		yaml = {
+			customTags = {
+				"!Equals sequence",
+				"!FindInMap sequence",
+				"!GetAtt",
+				"!GetAZs",
+				"!ImportValue",
+				"!Join sequence",
+				"!Ref",
+				"!Select sequence",
+				"!Split sequence",
+				"!Sub",
+			}
+		}
+	}
+}
+
 local cmp = require('cmp')
 cmp.setup({
 	snippet = {
