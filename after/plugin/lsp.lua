@@ -60,6 +60,8 @@ lspconfig.yamlls.setup {
 				"!Select sequence",
 				"!Split sequence",
 				"!Sub",
+				"!Sub sequence",
+				"!If sequence",
 			}
 		}
 	}
