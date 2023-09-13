@@ -5,7 +5,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 		local opts = { buffer = event.buf }
 		vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+		vim.keymap.set('n', 'gd', function()
+			vim.lsp.buf.definition()
+		end, opts)
 		vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 		vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
@@ -27,7 +29,7 @@ require('mason').setup()
 require('mason-lspconfig').setup({
 	ensure_installed = {
 		'rust_analyzer',
-		'pyright',
+		'jedi_language_server',
 	}
 })
 

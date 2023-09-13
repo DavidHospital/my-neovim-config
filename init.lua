@@ -1,7 +1,7 @@
 require("plugins")
 require("remaps")
 
-vim.cmd.colorscheme "kanagawa"
+vim.cmd.colorscheme "everforest"
 
 -- vim settings
 local set = vim.opt

@@ -11,10 +11,13 @@ return require('packer').startup(function(use)
 	use { 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} }
 	use 'nvim-treesitter/playground'
 
+	use 'ThePrimeagen/harpoon'
+
 	use 'tpope/vim-fugitive'
 
 	use { "catppuccin/nvim", as = "catppuccin" }
 	use { "rebelot/kanagawa.nvim", as = "kanagawa" }
+	use { "sainnhe/everforest", as = "everforest" }
 
 	use {
 		"williamboman/mason.nvim",
@@ -29,6 +32,11 @@ return require('packer').startup(function(use)
 		'hrsh7th/vim-vsnip',
 		'hrsh7th/cmp-vsnip',
 	}
+
+	use 'mfussenegger/nvim-dap'
+	use 'mfussenegger/nvim-dap-python'
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
 	use {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
@@ -39,10 +47,6 @@ return require('packer').startup(function(use)
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons' }
-	}
-	use {
-		'akinsho/bufferline.nvim', tag = "*", 
-		requires = 'nvim-tree/nvim-web-devicons'
 	}
 
 	use({
