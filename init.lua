@@ -1,7 +1,13 @@
 require("plugins")
 require("remaps")
 
-vim.cmd.colorscheme "everforest"
+vim.cmd.colorscheme "tokyonight"
+vim.cmd [[
+	highlight Normal ctermbg=none
+	highlight NormalNC ctermbg=none
+	highlight Normal guibg=none
+	highlight NormalNC guibg=none
+]]
 
 -- vim settings
 local set = vim.opt
