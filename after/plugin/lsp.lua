@@ -2,7 +2,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	desc = 'LSP actions',
 	callback = function(event)
 		-- Create your keybindings here...
-
 		local opts = { buffer = event.buf }
 		vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 		vim.keymap.set('n', 'gd', function()
@@ -28,7 +27,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 require('mason').setup()
 require('mason-lspconfig').setup({
 	ensure_installed = {
+		'lua_ls',
 		'rust_analyzer',
+		'pyright',
+		'ruff_lsp',
 	}
 })
 
@@ -43,6 +45,37 @@ require('mason-lspconfig').setup_handlers({
 		})
 	end,
 })
+
+require('lspconfig').pyright.setup {
+	on_attach = on_attach,
+	capabilities = lsp_capabilities,
+	settings = {
+		pyright = {
+			autoImportCompletion = true,
+		},
+		python = {
+			analysis = {
+				autoSearchPaths = true,
+				diagnosticMode = 'openFilesOnly',
+				useLibraryCodeForTypes = true,
+				typeCheckingMode = 'off',
+			}
+		}
+	}
+}
+
+-- Configure `ruff-lsp`.
+-- See: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff_lsp
+-- For the default config, along with instructions on how to customize the settings
+require('lspconfig').ruff_lsp.setup {
+  on_attach = on_attach,
+  init_options = {
+    settings = {
+      -- Any extra CLI arguments for `ruff` go here.
+      args = {},
+    }
+  }
+}
 
 -- yaml-language-server settings
 lspconfig.yamlls.setup {
