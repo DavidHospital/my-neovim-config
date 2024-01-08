@@ -24,6 +24,15 @@ vim.keymap.set('n', '<F12>', dap.step_out)
 
 require('dap-python').setup('~/work/.virtualenvs/debugpy/bin/python')
 require('dap-python').test_runner = 'pytest'
+dap.configurations.python = {
+	{
+		type = 'python',
+		request = 'launch',
+		name = 'custom launch configuration',
+		program = '${file}',
+		justMyCode = false,
+	}
+}
 
 vim.keymap.set('n', '<leader>dm', require'dap-python'.test_method)
 
