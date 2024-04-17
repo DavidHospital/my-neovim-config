@@ -18,3 +18,5 @@ set.shiftwidth = 4
 set.relativenumber = true
 set.number = true
 
+set.splitright = true
+

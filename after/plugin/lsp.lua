@@ -58,6 +58,9 @@ require('lspconfig').pyright.setup {
 				diagnosticMode = 'openFilesOnly',
 				useLibraryCodeForTypes = true,
 				typeCheckingMode = 'off',
+				extraPaths = {
+					os.getenv('PYTHONPATH')
+				},
 			}
 		}
 	}
