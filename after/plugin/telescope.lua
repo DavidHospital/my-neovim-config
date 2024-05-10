@@ -18,6 +18,7 @@ require('telescope').setup{
 				["<C-k>"] = actions.move_selection_previous,
             },
         },
+		layout_strategy = 'vertical',
     },
 	pickers = {
 		find_files = {
