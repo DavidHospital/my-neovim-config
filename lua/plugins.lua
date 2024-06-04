@@ -59,6 +59,8 @@ return require('packer').startup(function(use)
 		run = function() vim.fn["mkdp#util#install"]() end,
 	})
 
+	use 'icholy/lsplinks.nvim'
+
 	use 'github/copilot.vim'
 end)
 
