@@ -30,6 +30,7 @@ require('mason-lspconfig').setup({
 		'lua_ls',
 		'rust_analyzer',
 		'pyright',
+		'ruff_lsp',
 	}
 })
 
@@ -64,6 +65,14 @@ require('lspconfig').pyright.setup {
 			}
 		}
 	}
+}
+
+require('lspconfig').ruff_lsp.setup {
+	init_options = {
+		settings = {
+			args = {},
+		}
+	},
 }
 
 -- yaml-language-server settings
