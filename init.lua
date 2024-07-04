@@ -7,7 +7,9 @@ require("catppuccin").setup({
 	color_overrides = {
 		mocha = {
 			green = "#F9E2AF",
-			teal = "#F5E0DC",
+			teal = "#F4DBD6",
+			surface1 = "#9CA0B0",
+			overlay0 = "#8C8FA1",
 		},
 	},
 })
