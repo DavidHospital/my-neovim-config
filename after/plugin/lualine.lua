@@ -1,4 +1,4 @@
-local custom_theme = require('lualine.themes.everforest')
+local custom_theme = require('lualine.themes.catppuccin')
 custom_theme.normal.c.bg = 'none'
 custom_theme.inactive.c.bg = 'none'
 

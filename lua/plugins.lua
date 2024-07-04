@@ -18,6 +18,8 @@ return require('packer').startup(function(use)
 	use { "catppuccin/nvim", as = "catppuccin" }
 	use { "rebelot/kanagawa.nvim", as = "kanagawa" }
 	use { "sainnhe/everforest", as = "everforest" }
+	use { "folke/tokyonight.nvim", as = "tokyonight" }
+	use { "rose-pine/neovim", as = "rose-pine" }
 
 	use {
 		"williamboman/mason.nvim",
