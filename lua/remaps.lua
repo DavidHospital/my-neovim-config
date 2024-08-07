@@ -14,8 +14,6 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
--- copy paste to * and + registers
-vim.keymap.set('n', "<leader>y", "\"*y")
-vim.keymap.set('n', "<leader>Y", "\"+y")
-vim.keymap.set('n', "<leader>p", "\"*p")
-vim.keymap.set('n', "<leader>P", "\"*P")
+-- copy paste to + register
+vim.keymap.set('n', "<leader>y", "\"+y")
+vim.keymap.set('n', "<leader>p", "\"+p")
