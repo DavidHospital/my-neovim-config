@@ -22,7 +22,7 @@ vim.keymap.set('n', '<F10>', dap.step_over)
 vim.keymap.set('n', '<F11>', dap.step_into)
 vim.keymap.set('n', '<F12>', dap.step_out)
 
-require('dap-python').setup('~/work/.virtualenvs/debugpy/bin/python')
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 require('dap-python').test_runner = 'pytest'
 dap.configurations.python = {
 	{
