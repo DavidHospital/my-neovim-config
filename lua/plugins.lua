@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
 	use { "rebelot/kanagawa.nvim", as = "kanagawa" }
 	use { "sainnhe/everforest", as = "everforest" }
 	use { "folke/tokyonight.nvim", as = "tokyonight" }
+	use { "ellisonleao/gruvbox.nvim", as = "gruvbox" }
 
 	use {
 		"williamboman/mason.nvim",
@@ -36,7 +37,12 @@ return require('packer').startup(function(use)
 
 	use 'mfussenegger/nvim-dap'
 	use 'mfussenegger/nvim-dap-python'
-	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	use { "rcarriga/nvim-dap-ui", requires = {
+		"mfussenegger/nvim-dap",
+		"nvim-neotest/nvim-nio"
+	} }
+
+	-- use 'mrcjkb/rustaceanvim'
 
 	use {
 		"windwp/nvim-autopairs",
