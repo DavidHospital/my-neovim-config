@@ -86,6 +86,13 @@ cmp.setup({
 	}),
 })
 
+-- spyglassmc language server
+require'lspconfig'.spyglassmc_language_server.setup{}
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+	pattern = {"*.mcfunction"},
+	command = "set filetype=mcfunction",
+})
+
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 -- vim.api.nvim_create_autocmd('LspAttach', {
