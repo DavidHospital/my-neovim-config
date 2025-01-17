@@ -30,7 +30,7 @@ require('mason-lspconfig').setup({
 		'lua_ls',
 		'rust_analyzer',
 		'pyright',
-		'ruff_lsp',
+		'ruff',
 	}
 })
 
@@ -67,7 +67,7 @@ require('lspconfig').pyright.setup {
 	}
 }
 
-require('lspconfig').ruff_lsp.setup {
+require('lspconfig').ruff.setup {
 	init_options = {
 		settings = {
 			args = {},
