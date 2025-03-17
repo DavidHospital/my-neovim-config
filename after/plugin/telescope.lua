@@ -7,8 +7,10 @@ vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>g', function()
 	builtin.grep_string({ search = vim.fn.expand('<cword>') })
 end)
+vim.keymap.set('n', '<leader>b', builtin.git_branches, {})
 
 local actions = require('telescope.actions')
+
 require('telescope').setup{
     defaults = {
         mappings = {
