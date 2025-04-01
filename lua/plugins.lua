@@ -42,6 +42,8 @@ return require('packer').startup(function(use)
 		"nvim-neotest/nvim-nio"
 	} }
 
+	use 'mfussenegger/nvim-jdtls'
+
 	-- use 'mrcjkb/rustaceanvim'
 
 	use {
