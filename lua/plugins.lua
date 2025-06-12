@@ -62,6 +62,8 @@ return require('packer').startup(function(use)
 		"iamcco/markdown-preview.nvim",
 		run = function() vim.fn["mkdp#util#install"]() end,
 	})
+
+	use {"shortcuts/no-neck-pain.nvim", tag = "*" }
 end)
 
 

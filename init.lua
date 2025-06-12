@@ -21,3 +21,8 @@ set.shiftwidth = 4
 set.relativenumber = true
 set.number = true
 
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("NoNeckPain")
+  end,
+})
