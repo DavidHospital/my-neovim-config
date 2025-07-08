@@ -64,4 +64,6 @@ return require('packer').startup(function(use)
 	use 'icholy/lsplinks.nvim'
 
 	use 'github/copilot.vim'
+
+	use 'shortcuts/no-neck-pain.nvim'
 end)

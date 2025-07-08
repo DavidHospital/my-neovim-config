@@ -17,6 +17,12 @@ vim.cmd [[
 	silent! colorscheme catppuccin-mocha
 ]]
 
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("NoNeckPain")
+  end,
+})
+
 -- vim.cmd.colorscheme "everforest"
 -- vim.o.termguicolors = false
 -- vim.cmd [[
