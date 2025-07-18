@@ -6,6 +6,11 @@ dap.adapters.gdb = {
   args = { "-i", "dap" }
 }
 
+dap.adapters.lldb = {
+	type = 'executable',
+	command = 'codelldb',
+}
+
 dapui.setup()
 
 dap.listeners.after.event_initialized["dapui_config"] = function()

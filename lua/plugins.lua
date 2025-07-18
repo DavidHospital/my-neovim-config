@@ -6,9 +6,9 @@ return require('packer').startup(function(use)
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.3',
 		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
+		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
-	use { 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} }
+	use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
 	use 'nvim-treesitter/playground'
 
 	use 'ThePrimeagen/harpoon'
@@ -63,7 +63,16 @@ return require('packer').startup(function(use)
 		run = function() vim.fn["mkdp#util#install"]() end,
 	})
 
-	use {"shortcuts/no-neck-pain.nvim", tag = "*" }
+	use { "shortcuts/no-neck-pain.nvim", tag = "*" }
+
+	use {
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-neotest/nvim-nio",
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"DavidHospital/neotest-rust",
+		}
+	}
 end)
-
-
