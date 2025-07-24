@@ -66,4 +66,15 @@ return require('packer').startup(function(use)
 	use 'github/copilot.vim'
 
 	use 'shortcuts/no-neck-pain.nvim'
+
+	use {
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-neotest/nvim-nio",
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-neotest/neotest-python",
+		}
+	}
 end)
