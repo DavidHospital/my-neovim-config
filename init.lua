@@ -42,3 +42,9 @@ set.relativenumber = true
 set.number = true
 
 set.splitright = true
+
+-- pretty print json file
+vim.api.nvim_create_user_command("JqFormat", function()
+	vim.cmd("silent! %!jq .")
+	vim.bo.filetype = "json"
+end, { nargs = 0 })
