@@ -30,7 +30,7 @@ dap.configurations.python = {
 		request = 'launch',
 		name = 'custom launch configuration',
 		program = '${file}',
-		justMyCode = false,
+		justMyCode = true,
 	}
 }
 

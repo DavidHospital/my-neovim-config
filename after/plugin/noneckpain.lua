@@ -3,6 +3,12 @@ require("no-neck-pain").setup({
 		right = {
 			enabled = false,
 		},
+		left = {
+			scratchPad = {
+				enabled = true,
+				pathToFile = "~/.scratchpads/" .. vim.fn.fnamemodify(vim.loop.cwd(), ":t") .. ".norg",
+			},
+		},
 	},
 	minSideBufferWidth = 40,
 	autocmds = {

@@ -10,3 +10,7 @@
 
 * Simply clone with `git clone https://github.com/DavidHospital/my-neovim-config .config/nvim`
 * Start neovim, and run `:PackerSync`
+
+## Setup
+
+* Create a directory "~/.scratchpads" for `NoNeckPain` scratchpads to save to
