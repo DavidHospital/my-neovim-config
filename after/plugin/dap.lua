@@ -31,7 +31,10 @@ dap.configurations.python = {
 		name = 'custom launch configuration',
 		program = '${file}',
 		justMyCode = true,
-	}
+	},
 }
 
 vim.keymap.set('n', '<leader>dm', require 'dap-python'.test_method)
+vim.keymap.set('n', '<leader>ds', function()
+	require 'dap'.continue()
+end, { desc = "Debug current file" })
