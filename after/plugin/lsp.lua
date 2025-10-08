@@ -46,6 +46,16 @@ require('mason-lspconfig').setup_handlers({
 	end,
 })
 
+require('lspconfig').rust_analyzer.setup {
+	settings = {
+		['rust-analyzer'] = {
+			cargo = {
+				features = 'all',
+			},
+		},
+	},
+}
+
 require('lspconfig').pyright.setup {
 	on_attach = on_attach,
 	capabilities = lsp_capabilities,
