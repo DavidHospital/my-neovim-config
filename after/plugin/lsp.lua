@@ -34,19 +34,18 @@ require('mason-lspconfig').setup({
 	}
 })
 
-local lspconfig = require('lspconfig')
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 lsp_capabilities.textDocument.completion.completionItem.snippetSupport = false
 
-require('mason-lspconfig').setup_handlers({
-	function(server_name)
-		lspconfig[server_name].setup({
-			capabilities = lsp_capabilities,
-		})
-	end,
-})
+-- require('mason-lspconfig').setup_handlers({
+-- 	function(server_name)
+-- 		lspconfig[server_name].setup({
+-- 			capabilities = lsp_capabilities,
+-- 		})
+-- 	end,
+-- })
 
-require('lspconfig').rust_analyzer.setup {
+vim.lsp.config('rust_analyzer', {
 	settings = {
 		['rust-analyzer'] = {
 			cargo = {
@@ -54,9 +53,9 @@ require('lspconfig').rust_analyzer.setup {
 			},
 		},
 	},
-}
+})
 
-require('lspconfig').pyright.setup {
+vim.lsp.config('pyright', {
 	on_attach = on_attach,
 	capabilities = lsp_capabilities,
 	settings = {
@@ -75,18 +74,18 @@ require('lspconfig').pyright.setup {
 			}
 		}
 	}
-}
+})
 
-require('lspconfig').ruff.setup {
+vim.lsp.config('ruff', {
 	init_options = {
 		settings = {
 			args = {},
 		}
 	},
-}
+})
 
 -- yaml-language-server settings
-lspconfig.yamlls.setup {
+vim.lsp.config('yamlls', {
 	on_attach = on_attach,
 	capabilities = lsp_capabilities,
 	settings = {
@@ -107,7 +106,7 @@ lspconfig.yamlls.setup {
 			}
 		}
 	}
-}
+})
 
 local cmp = require('cmp')
 cmp.setup({

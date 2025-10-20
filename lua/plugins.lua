@@ -75,6 +75,7 @@ return require('packer').startup(function(use)
 			"antoinemadec/FixCursorHold.nvim",
 			"nvim-treesitter/nvim-treesitter",
 			"nvim-neotest/neotest-python",
+			"DavidHospital/neotest-rust",
 		}
 	}
 end)

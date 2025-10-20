@@ -5,6 +5,11 @@ dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open({})
 end
 
+dap.adapters.lldb = {
+	type = 'executable',
+	command = 'codelldb',
+}
+
 vim.keymap.set('n', '<leader>duc', dapui.close)
 vim.keymap.set('n', '<leader>duo', dapui.open)
 

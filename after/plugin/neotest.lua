@@ -4,6 +4,9 @@ neotest.setup({
 		require("neotest-python")({
 			dap = { justMyCode = false },
 		}),
+		require("neotest-rust") {
+			dap_adapter = "lldb",
+		},
 	},
 })
 
