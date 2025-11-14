@@ -6,6 +6,7 @@ neotest.setup({
 		}),
 		require("neotest-rust") {
 			dap_adapter = "lldb",
+			args = { "--all-features" },
 		},
 	},
 })
