@@ -48,3 +48,9 @@ vim.api.nvim_create_user_command("JqFormat", function()
 	vim.cmd("silent! %!jq .")
 	vim.bo.filetype = "json"
 end, { nargs = 0 })
+
+-- custom keymaps
+vim.keymap.set('n', 'gt', function()
+	vim.lsp.buf.type_definition()
+	vim.cmd("normal! zz")
+end, { desc = "Go to type definition" })
