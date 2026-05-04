@@ -32,41 +32,8 @@ require('mason-lspconfig').setup({
 	}
 })
 
-local lspconfig = require('lspconfig')
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 lsp_capabilities.textDocument.completion.completionItem.snippetSupport = false
-
--- require('mason-lspconfig').setup_handlers({
--- 	function(server_name)
--- 		lspconfig[server_name].setup({
--- 			capabilities = lsp_capabilities,
--- 		})
--- 	end,
--- })
-
--- yaml-language-server settings
-lspconfig.yamlls.setup {
-	on_attach = on_attach,
-	capabilities = lsp_capabilities,
-	settings = {
-		yaml = {
-			customTags = {
-				"!Equals sequence",
-				"!FindInMap sequence",
-				"!GetAtt",
-				"!GetAZs",
-				"!ImportValue",
-				"!Join sequence",
-				"!Ref",
-				"!Select sequence",
-				"!Split sequence",
-				"!Sub",
-				"!Sub sequence",
-				"!If sequence",
-			}
-		}
-	}
-}
 
 local cmp = require('cmp')
 cmp.setup({
@@ -85,23 +52,3 @@ cmp.setup({
 		{ name = 'nvim_lsp_signature_help' },
 	}),
 })
-
--- spyglassmc language server
-require'lspconfig'.spyglassmc_language_server.setup{}
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-	pattern = {"*.mcfunction"},
-	command = "set filetype=mcfunction",
-})
-
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
--- vim.api.nvim_create_autocmd('LspAttach', {
-	--   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-	--   callback = function(ev)
-		--     -- Enable completion triggered by <c-x><c-o>
-		--     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-		--
-		--     -- Buffer local mappings.
-		--     -- See `:help vim.lsp.*` for documentation on any of the below functions
-		--   end,
-		-- })
