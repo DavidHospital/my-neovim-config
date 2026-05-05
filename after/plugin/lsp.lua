@@ -32,8 +32,17 @@ require('mason-lspconfig').setup({
 	}
 })
 
-local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-lsp_capabilities.textDocument.completion.completionItem.snippetSupport = false
+local capabilities = vim.tbl_deep_extend(
+    'force',
+    vim.lsp.protocol.make_client_capabilities(),
+    require('cmp_nvim_lsp').default_capabilities()
+)
+
+vim.lsp.config('wgsl_analyzer', {
+	capabilities = capabilities,
+})
+
+vim.lsp.enable('wgsl_analyzer')
 
 local cmp = require('cmp')
 cmp.setup({

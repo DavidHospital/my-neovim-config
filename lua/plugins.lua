@@ -72,4 +72,6 @@ return require('packer').startup(function(use)
 			"DavidHospital/neotest-rust",
 		}
 	}
+
+	use "DingDean/wgsl.vim"
 end)
