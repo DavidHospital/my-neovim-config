@@ -87,21 +87,37 @@ cmp.setup({
 })
 
 -- spyglassmc language server
-require'lspconfig'.spyglassmc_language_server.setup{}
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-	pattern = {"*.mcfunction"},
+require 'lspconfig'.spyglassmc_language_server.setup {}
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+	pattern = { "*.mcfunction" },
 	command = "set filetype=mcfunction",
 })
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 -- vim.api.nvim_create_autocmd('LspAttach', {
-	--   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-	--   callback = function(ev)
-		--     -- Enable completion triggered by <c-x><c-o>
-		--     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-		--
-		--     -- Buffer local mappings.
-		--     -- See `:help vim.lsp.*` for documentation on any of the below functions
-		--   end,
-		-- })
+--   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+--   callback = function(ev)
+--     -- Enable completion triggered by <c-x><c-o>
+--     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+--
+--     -- Buffer local mappings.
+--     -- See `:help vim.lsp.*` for documentation on any of the below functions
+--   end,
+-- })
+
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = "*.wgsl", command = "setfiletype wgsl" })
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = "*.wesl", command = "setfiletype wesl" })
+local lspconfig = require('lspconfig')
+lspconfig.wgsl_analyzer.setup({
+	filetypes = { "wgsl", "wesl" },
+	capabilities = lsp_capabilities,
+	settings = {
+		["wgsl-analyzer"] = {
+			wesl = {
+				enable = true,
+			}
+		}
+	},
+})
