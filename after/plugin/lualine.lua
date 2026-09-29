@@ -1,4 +1,4 @@
-local custom_theme = require('lualine.themes.catppuccin')
+local custom_theme = require('lualine.themes.catppuccin-nvim')
 custom_theme.normal.c.bg = 'none'
 custom_theme.inactive.c.bg = 'none'
 
