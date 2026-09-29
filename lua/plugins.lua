@@ -63,7 +63,15 @@ return require('packer').startup(function(use)
 
 	use 'icholy/lsplinks.nvim'
 
-	use 'github/copilot.vim'
+	-- use 'github/copilot.vim'
+	use {
+		'zbirenbaum/copilot.lua',
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({})
+		end,
+	}
 
 	use 'shortcuts/no-neck-pain.nvim'
 

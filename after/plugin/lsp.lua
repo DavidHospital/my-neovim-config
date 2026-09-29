@@ -55,6 +55,27 @@ vim.lsp.config('rust_analyzer', {
 	},
 })
 
+-- jdtls needs a JVM >= 21 to run, but Turbine compiles at 17. Keep the global
+-- JAVA_HOME on 17 for ant/`just doctor` and give only the server the newer JVM.
+vim.lsp.config('jdtls', {
+	cmd_env = { JAVA_HOME = '/usr/lib/jvm/java-21-openjdk-amd64' },
+	settings = {
+		java = {
+			configuration = {
+				runtimes = {
+					{
+						name = 'JavaSE-17',
+						path = '/usr/lib/jvm/java-17-openjdk-amd64',
+						default = true,
+					},
+				},
+			},
+		},
+	},
+})
+
+vim.lsp.enable('jdtls')
+
 vim.lsp.config('pyright', {
 	on_attach = on_attach,
 	capabilities = lsp_capabilities,
@@ -90,6 +111,9 @@ vim.lsp.config('yamlls', {
 	capabilities = lsp_capabilities,
 	settings = {
 		yaml = {
+			schemaStore = {
+				enable = true,
+			},
 			customTags = {
 				"!Equals sequence",
 				"!FindInMap sequence",

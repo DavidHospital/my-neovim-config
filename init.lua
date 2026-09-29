@@ -54,3 +54,6 @@ vim.keymap.set('n', 'gt', function()
 	vim.lsp.buf.type_definition()
 	vim.cmd("normal! zz")
 end, { desc = "Go to type definition" })
+
+-- custom config per project
+vim.o.exrc = true
